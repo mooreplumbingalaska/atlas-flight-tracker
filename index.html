@@ -1,62 +1,31 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#07111f">
-  <meta name="description" content="Atlas Flight Tracker - personal live aircraft map">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#07111f" />
   <title>Atlas Flight Tracker</title>
-
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="appShell">
-    <header class="topbar">
-      <div>
-        <h1>Atlas Flight Tracker</h1>
-        <p id="statusText">Ready</p>
-      </div>
-      <button id="installBtn" class="ghost hidden">Install</button>
-    </header>
-
-    <section class="panel">
-      <div class="searchRow">
-        <input id="searchInput" placeholder="Search callsign, e.g. ASA123" autocomplete="off">
-        <button id="searchBtn">Search</button>
-      </div>
-
-      <div class="quickBtns">
-        <button data-box="pnw">PNW</button>
-        <button data-box="alaska">Alaska</button>
-        <button data-box="usa">USA</button>
-        <button id="nearMeBtn">Near me</button>
-        <button id="refreshBtn">Refresh</button>
-      </div>
-
-      <div class="stats">
-        <span id="aircraftCount">0 aircraft</span>
-        <span id="lastUpdate">No update yet</span>
-      </div>
-    </section>
-
-    <main>
-      <div id="map"></div>
-      <aside id="details" class="details">
-        <h2>Aircraft details</h2>
-        <p>Tap a plane marker to see altitude, speed, heading, country, and callsign.</p>
-      </aside>
-    </main>
-
-    <nav class="bottomNav">
-      <button id="mapModeBtn">Map</button>
-      <button id="darkBtn">Dark</button>
-      <button id="favoritesBtn">Favorites</button>
-    </nav>
-  </div>
-
+  <header class="topbar">
+    <div><h1>Atlas Flight Tracker</h1><p id="status">Starting…</p></div>
+    <button id="refreshBtn">Refresh</button>
+  </header>
+  <section class="controls">
+    <input id="search" placeholder="Search callsign, e.g. ASA123" autocomplete="off" />
+    <select id="area">
+      <option value="tacoma">Tacoma</option>
+      <option value="pnw">PNW</option>
+      <option value="alaska">Alaska</option>
+      <option value="usa">USA</option>
+    </select>
+    <button id="installBtn" hidden>Install</button>
+  </section>
+  <main id="map"></main>
+  <section id="panel" class="panel"><strong>Fix installed:</strong> visible aircraft markers and real API error messages.</section>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="app.js"></script>
 </body>
