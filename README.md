@@ -1,21 +1,9 @@
-# Atlas Flight Tracker PWA
+# Atlas Flight Tracker fixed build
 
-This is a phone-installable Progressive Web App.
+Fixes:
+- visible aircraft markers
+- Tacoma default area
+- smaller first API request
+- real API errors displayed on screen
 
-## Fastest install path
-1. Upload this folder to Netlify, GitHub Pages, or another HTTPS web host.
-2. Open the hosted link in Chrome on Android.
-3. Tap Chrome menu ⋮.
-4. Tap "Add to Home screen" or "Install app".
-5. Tap Install.
-
-## Data source
-Uses OpenSky Network public REST API. It may rate-limit public requests.
-
-## Files
-- index.html
-- styles.css
-- app.js
-- manifest.json
-- service-worker.js
-- icons/
+Upload all files to your GitHub repository root, then refresh GitHub Pages.
